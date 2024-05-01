@@ -22,16 +22,16 @@ else:
 
 ENV_NAME = 'SuperMarioBros-1-1-v0'
 SHOULD_TRAIN = False
-DISPLAY = False
+DISPLAY = True
 CKPT_SAVE_INTERVAL = 500
 NUM_OF_EPISODES = 50
 
 
-model_ep_cnt = 16500
+model_ep_cnt = 21_000
 max_rewards = []
 average_rewards = []
 
-for m in range(500, model_ep_cnt + 1, CKPT_SAVE_INTERVAL):
+for m in range(21_000, model_ep_cnt + 1, CKPT_SAVE_INTERVAL):
 
     model_rewards = []
     max = 0
@@ -92,4 +92,9 @@ for m in range(500, model_ep_cnt + 1, CKPT_SAVE_INTERVAL):
     print(f"model_{m} max reward: {max} avg reward: {avg}")
 
 for num in max_rewards:
+    print("\nMAX")
+    print(num)
+
+for num in average_rewards:
+    print("\nAVERAGE")
     print(num)

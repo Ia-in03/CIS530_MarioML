@@ -24,7 +24,7 @@ ENV_NAME = 'SuperMarioBros-1-1-v0'
 SHOULD_TRAIN = True
 DISPLAY = False
 CKPT_SAVE_INTERVAL = 500
-NUM_OF_EPISODES = 5_000
+NUM_OF_EPISODES = 1_000
 
 import csv
 CSV_FILE_NAME = "training-data.csv"
