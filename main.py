@@ -21,10 +21,10 @@ else:
     print("CUDA is not available")
 
 ENV_NAME = 'SuperMarioBros-1-1-v0'
-SHOULD_TRAIN = False
-DISPLAY = True
-CKPT_SAVE_INTERVAL = 500
-NUM_OF_EPISODES = 50_000
+SHOULD_TRAIN = False # whether or not to train
+DISPLAY = True # wheter or not to display game screen
+CKPT_SAVE_INTERVAL = 500 # episode interval for when to save trained model
+NUM_OF_EPISODES = 50_000 # number of episodes to run
 
 env = gym_super_mario_bros.make(ENV_NAME, render_mode='human' if DISPLAY else 'rgb', apply_api_compatibility=True)
 env = JoypadSpace(env, RIGHT_ONLY)
@@ -34,8 +34,8 @@ env = apply_wrappers(env)
 agent = Agent(input_dims=env.observation_space.shape, num_actions=env.action_space.n)
 
 if not SHOULD_TRAIN:
-    folder_name = "2024-04-29-17_55_18"
-    ckpt_name = "model_15000_iter.pt"
+    folder_name = "2024-04-29-17_55_18" # trained model directory
+    ckpt_name = "model_21000_iter.pt" # trained model to run
     agent.load_model(os.path.join("models", folder_name, ckpt_name))
     agent.epsilon = 0.2
     agent.eps_min = 0.0
