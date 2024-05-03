@@ -6,3 +6,23 @@ Video Explanation of the Reinforcement learning algorithm:https://youtu.be/_gmQZ
 Resource Papers:
     Human-level control through deep reinforcement learning: https://doi.org/10.1038/nature14236
     Deep Reinforcement Learning with Double Q-learning: https://arxiv.org/pdf/1509.06461.pdf
+
+## Set up
+### Requirements
+There are a few prerequistes to running the RL cycle and running pretrained models
+- Anaconda software is installed and added to your terminal path
+- Your machine can run Nvidia CUDA software (this is mandatory for running the pretrained models)
+
+### Installation
+#### Clone this repository into your working directory
+    git clone https://github.com/Ia-in03/CIS530_MarioML.git
+#### Run conda env from enviornment.yml
+    conda env create -f environment.yml
+#### And then activate environment
+    conda activate smbrl
+
+## Run python scripts
+- **main.py** will run the normal script
+- **csv_plotter** will run the same as main but all episode information (epsilon value, total=reward, etc.) will be dumped to a csv file
+- **eval-models.py** will run through the existing pretrained models and print data (max reward, avg reward) to console
+#### Each script has constant values that can be adjusted based on if you want to see a display or not, want to train the agent or not, number of episode cycles, etc.
